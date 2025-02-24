@@ -11,13 +11,13 @@ import java.util.Map;
 @RestController
 public class TokenController {
 
-    @Value("${TOKEN_URL}")
+    @Value("${kis.token.url}")
     private String tokenUrl;
 
-    @Value("${APP_KEY}")
+    @Value("${kis.api.app_key}")
     private String appKey;
 
-    @Value("${APP_SECRET}")
+    @Value("${kis.api.app_secret}")
     private String appSecret;
 
     /**
