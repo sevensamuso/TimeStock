@@ -30,18 +30,15 @@ public class TokenController {
     public ResponseEntity<String> getToken() {
         RestTemplate restTemplate = new RestTemplate();
 
-        // 요청 본문 구성
         Map<String, String> requestBody = new HashMap<>();
         requestBody.put("grant_type", "client_credentials");
         requestBody.put("appkey", appKey);
         requestBody.put("appsecret", appSecret);
 
-        // 요청 헤더 구성
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<Map<String, String>> entity = new HttpEntity<>(requestBody, headers);
 
-        // POST 요청으로 토큰 발급 API 호출
         ResponseEntity<String> response = restTemplate.exchange(
                 tokenUrl,
                 HttpMethod.POST,

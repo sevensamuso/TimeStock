@@ -26,7 +26,6 @@ public class ApiController {
     /**
      * DB에 저장된 962개 종목에 대해 각각 API 호출 후 "stck_prpr" 값을 리스트로 반환합니다.
      */
-
     @GetMapping("/stock-price")
     public ResponseEntity<List<String>> getStockPrice() {
         List<String> prices = stockPriceService.fetchAllStockPrices();
